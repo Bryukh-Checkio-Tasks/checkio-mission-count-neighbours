@@ -1,0 +1,87 @@
+<div class="story">
+<p>
+"Animals and plants can reproduce themselves,
+but it was only recently shown that machines can be made which also
+reproduce themselves……. Other kinds of self-reproducing machines
+will be described, and one simple mechanical
+model, with no electrical or magnetic complications,
+will be there in working order for the audience to inspect and operate."
+</p>
+<p>
+-- Edward Forrest Moore
+</p>
+</div>
+<p>
+Dans un automate cellulaire sur un damier bidimentionnel,
+<a href="http://en.wikipedia.org/wiki/Moore_neighborhood">le voisinage de Moore</a> d'une cellule 
+ est constitué des huit cellules qui entourent cette cellule centrale. 
+Ce voisinage porte le nom de Edward F. Moore, pionnier de la théorie des automates cellulaires.
+De nombreux jeux de plateau se jouent sur une grille rectangulaire composée de cellules carrées.
+Dans certains jeux, il est important de connaître la disposition des cellules voisines du pion afin 
+de savoir comment le déplacer et d'élaborer une stratégie.
+</p>
+<p>
+L'état du plateau rectangulaire d'un jeu vous est communiqué avec la position des pions, sous la forme 
+d'une matrice où 1 représente un pion et 0 une case vide.
+Les lignes et les colonnes du plateau sont numérotées à partir de 0.
+Les coordonnées d'une cellule (numéro de ligne, numéro de colonne) vous sont également données.
+Il vous faut déterminer combien de pions sont près de cette cellule.
+Chaque cellule interagit avec ses huit cellules voisines : celles qui lui sont adjacentes horizontalement, verticalement, 
+ou en diagonale.
+</p>
+<p style="text-align: center;">
+<img title="example" src="{{MEDIA}}example.svg" alt="example"
+style="max-width: 520px;width: 100%;"/>
+</p>
+<p>
+Sur les exemples ci-contre (voir le shéma) on considère la même grille:
+</p>
+<pre>
+((1, 0, 0, 1, 0),
+(0, 1, 0, 0, 0),
+(0, 0, 1, 0, 1),
+(1, 0, 0, 0, 0),
+(0, 0, 1, 0, 0),)
+</pre>
+<br>
+<p>
+Pour le premier exemple, les coordonnées de la case considérée sont (1,&nbsp;2), et 
+comme indiqué sur le schéma, cette case a trois pions dans les cases voisines. 
+Pour le second exemple, les coordonnées  sont (0,&nbsp;0) et cette case contient un pion,
+mais on ne compte qu'un pion dans les cases voisines ; la réponse est ici 1.
+</p>
+<p>
+<strong>Input: </strong> Trois arguments. Une grille comme tuple de tuples d'entiers (1 ou 0),
+un numéro de ligne (int) et un numéro de colonne (int) pour les coordonnées de la case considérée.
+</p>
+<p>
+<strong>Output: </strong> Le nombre de cases voisines de cette case qui contiennent un pion (int).
+</p>
+<div class="for_info_only">
+<p>
+<strong>Exemple:</strong>
+</p>
+<pre class="brush: python">
+count_neighbours(((1, 0, 0, 1, 0),
+(0, 1, 0, 0, 0),
+(0, 0, 1, 0, 1),
+(1, 0, 0, 0, 0),
+(0, 0, 1, 0, 0),), 1, 2) == 3
+count_neighbours(((1, 0, 0, 1, 0),
+(0, 1, 0, 0, 0),
+(0, 0, 1, 0, 1),
+(1, 0, 0, 0, 0),
+(0, 0, 1, 0, 0),), 0, 0) == 1</pre>
+</div>
+<br>
+<p class="for_info_only">
+<strong>Utilisation: </strong>
+Comme nous le mentionnons en introduction, cette idée est utile lors de développement 
+d'algorithmes pour les jeux de plateau.
+De plus, les même principes peuvent être appliqués pour des logiciels de navigation, d'exploration géographique, ... 
+</p>
+<p>
+<strong>Précondition:</strong><br>
+3 &le; len(grid) &le; 10<br>
+all(len(grid[0]) == len(row) for row in grid)
+</p>
