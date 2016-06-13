@@ -7,7 +7,7 @@ function countNeighbours(data) {
 var assert = require('assert');
 
 if (!global.is_checking) {
-    assert.equal(countNeighbours([[1, 0, 0, 1, 0,
+    assert.equal(countNeighbours([[1, 0, 0, 1, 0],
                                   [0, 1, 0, 0, 0],
                                   [0, 0, 1, 0, 1],
                                   [1, 0, 0, 0, 0],
