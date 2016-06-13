@@ -40,6 +40,15 @@
 <p>
     For the given examples (see the schema) there is the same grid:
 </p>
+{% if interpreter.slug == "js-node" %}
+<pre>
+[[1, 0, 0, 1, 0],
+ [0, 1, 0, 0, 0],
+ [0, 0, 1, 0, 1],
+ [1, 0, 0, 0, 0],
+ [0, 0, 1, 0, 0]]
+</pre>
+{% else %}
 <pre>
 ((1, 0, 0, 1, 0),
  (0, 1, 0, 0, 0),
@@ -47,6 +56,7 @@
  (1, 0, 0, 0, 0),
  (0, 0, 1, 0, 0),)
 </pre>
+{ % endif %}
 <br>
 <p>
     For the first example coordinates of the cell is (1,&nbsp;2) and
@@ -70,16 +80,30 @@
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-{% if interpreter.slug == "js-node" %}countNeighbours{% else %}count_neighbours{% endif %}(((1, 0, 0, 1, 0),
+{% if interpreter.slug == "js-node" %}
+count_neighbours(((1, 0, 0, 1, 0),
                   (0, 1, 0, 0, 0),
                   (0, 0, 1, 0, 1),
                   (1, 0, 0, 0, 0),
                   (0, 0, 1, 0, 0),), 1, 2) == 3
-{% if interpreter.slug == "js-node" %}countNeighbours{% else %}count_neighbours{% endif %}(((1, 0, 0, 1, 0),
+count_neighbours(((1, 0, 0, 1, 0),
                   (0, 1, 0, 0, 0),
                   (0, 0, 1, 0, 1),
                   (1, 0, 0, 0, 0),
-                  (0, 0, 1, 0, 0),), 0, 0) == 1</pre>
+                  (0, 0, 1, 0, 0),), 0, 0) == 1
+{% else %}
+countNeighbours([[1, 0, 0, 1, 0],
+                 [0, 1, 0, 0, 0],
+                 [0, 0, 1, 0, 1],
+                 [1, 0, 0, 0, 0],
+                 [0, 0, 1, 0, 0]], 1, 2) == 3
+countNeighbours([[1, 0, 0, 1, 0],
+                 [0, 1, 0, 0, 0],
+                 [0, 0, 1, 0, 1],
+                 [1, 0, 0, 0, 0],
+                 [0, 0, 1, 0, 0]], 0, 0) == 1
+{% endif %}
+</pre>
 </div>
 <br>
 <p class="for_info_only">
