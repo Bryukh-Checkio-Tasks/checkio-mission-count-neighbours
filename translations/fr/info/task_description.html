@@ -50,13 +50,23 @@ style="max-width: 520px;width: 100%;"/>
 <p>
 Sur les exemples ci-contre (voir le shéma) on considère la même grille:
 </p>
+{% if interpreter.slug == "js-node" %}
+<pre>
+[[1, 0, 0, 1, 0],
+ [0, 1, 0, 0, 0],
+ [0, 0, 1, 0, 1],
+ [1, 0, 0, 0, 0],
+ [0, 0, 1, 0, 0]]
+</pre>
+{% else %}
 <pre>
 ((1, 0, 0, 1, 0),
-(0, 1, 0, 0, 0),
-(0, 0, 1, 0, 1),
-(1, 0, 0, 0, 0),
-(0, 0, 1, 0, 0),)
+ (0, 1, 0, 0, 0),
+ (0, 0, 1, 0, 1),
+ (1, 0, 0, 0, 0),
+ (0, 0, 1, 0, 0),)
 </pre>
+{% endif %}
 <br>
 <p>
 Pour le premier exemple, les coordonnées de la case considérée sont (1,&nbsp;2), et 
@@ -75,17 +85,29 @@ un numéro de ligne (int) et un numéro de colonne (int) pour les coordonnées d
 <p>
 <strong>Exemple:</strong>
 </p>
-<pre class="brush: python">
+    <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+countNeighbours([[1, 0, 0, 1, 0],
+                 [0, 1, 0, 0, 0],
+                 [0, 0, 1, 0, 1],
+                 [1, 0, 0, 0, 0],
+                 [0, 0, 1, 0, 0]], 1, 2) == 3
+countNeighbours([[1, 0, 0, 1, 0],
+                 [0, 1, 0, 0, 0],
+                 [0, 0, 1, 0, 1],
+                 [1, 0, 0, 0, 0],
+                 [0, 0, 1, 0, 0]], 0, 0) == 1
+{% else %}
 count_neighbours(((1, 0, 0, 1, 0),
-(0, 1, 0, 0, 0),
-(0, 0, 1, 0, 1),
-(1, 0, 0, 0, 0),
-(0, 0, 1, 0, 0),), 1, 2) == 3
+                  (0, 1, 0, 0, 0),
+                  (0, 0, 1, 0, 1),
+                  (1, 0, 0, 0, 0),
+                  (0, 0, 1, 0, 0),), 1, 2) == 3
 count_neighbours(((1, 0, 0, 1, 0),
-(0, 1, 0, 0, 0),
-(0, 0, 1, 0, 1),
-(1, 0, 0, 0, 0),
-(0, 0, 1, 0, 0),), 0, 0) == 1</pre>
+                  (0, 1, 0, 0, 0),
+                  (0, 0, 1, 0, 1),
+                  (1, 0, 0, 0, 0),
+                  (0, 0, 1, 0, 0),), 0, 0) == 1
+{% endif %}</pre>
 </div>
 <br>
 <p class="for_info_only">
