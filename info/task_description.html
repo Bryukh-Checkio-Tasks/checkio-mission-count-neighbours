@@ -79,19 +79,7 @@
     <p>
         <strong>Example:</strong>
     </p>
-    <pre class="brush: python">
-{% if interpreter.slug == "js-node" %}
-count_neighbours(((1, 0, 0, 1, 0),
-                  (0, 1, 0, 0, 0),
-                  (0, 0, 1, 0, 1),
-                  (1, 0, 0, 0, 0),
-                  (0, 0, 1, 0, 0),), 1, 2) == 3
-count_neighbours(((1, 0, 0, 1, 0),
-                  (0, 1, 0, 0, 0),
-                  (0, 0, 1, 0, 1),
-                  (1, 0, 0, 0, 0),
-                  (0, 0, 1, 0, 0),), 0, 0) == 1
-{% else %}
+    <pre class="brush: python">{% if interpreter.slug == "js-node" %}
 countNeighbours([[1, 0, 0, 1, 0],
                  [0, 1, 0, 0, 0],
                  [0, 0, 1, 0, 1],
@@ -102,8 +90,18 @@ countNeighbours([[1, 0, 0, 1, 0],
                  [0, 0, 1, 0, 1],
                  [1, 0, 0, 0, 0],
                  [0, 0, 1, 0, 0]], 0, 0) == 1
-{% endif %}
-</pre>
+{% else %}
+count_neighbours(((1, 0, 0, 1, 0),
+                  (0, 1, 0, 0, 0),
+                  (0, 0, 1, 0, 1),
+                  (1, 0, 0, 0, 0),
+                  (0, 0, 1, 0, 0),), 1, 2) == 3
+count_neighbours(((1, 0, 0, 1, 0),
+                  (0, 1, 0, 0, 0),
+                  (0, 0, 1, 0, 1),
+                  (1, 0, 0, 0, 0),
+                  (0, 0, 1, 0, 0),), 0, 0) == 1
+{% endif %}</pre>
 </div>
 <br>
 <p class="for_info_only">
