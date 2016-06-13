@@ -70,7 +70,7 @@
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-count_neighbours(((1, 0, 0, 1, 0),
+{% if interpreter.slug == "js-node" %}count_neighbours{% else %}count_neighbours{% endif %}(((1, 0, 0, 1, 0),
                   (0, 1, 0, 0, 0),
                   (0, 0, 1, 0, 1),
                   (1, 0, 0, 0, 0),
