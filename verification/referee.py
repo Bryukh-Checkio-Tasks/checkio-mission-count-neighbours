@@ -45,7 +45,7 @@ api.add_listener(
         cover_code={
             'python-27': cover,
             'python-3': cover,
-            'js_node': cover_codes.js_unwrap_args
+            'js-node': cover_codes.js_unwrap_args
         },
         function_name="count_neighbours"
         # checker=None,  # checkers.float.comparison(2)
