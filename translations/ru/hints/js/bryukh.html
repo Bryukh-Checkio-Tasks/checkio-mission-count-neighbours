@@ -1,0 +1,75 @@
+<body data-author="bryukh">
+<div class="question-answer">
+    <div class="question">
+        Я не представляю, как решить эту задачу
+    </div>
+    <div class="answer">
+        Один из способов это вначале сформировать список соседей относительно нулевой точки
+
+
+<pre class="brush: javascript">
+NEIGHBORS = [[-1, -1], [-1, 0], [-1, 1], [0, -1],
+              [0, 1], [1, -1], [1, 0], [1, 1]]
+</pre>
+
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Мне все еще нужна помощь, чтобы продолжить
+    </div>
+    <div class="answer">
+        Подготовте переменную счетчик и идите по списку соседей
+<pre class="brush: javascript">
+var count = 0
+NEIGHBORS.forEach((diff)=>{
+  n_row = row + diff[0]
+  n_col = col + diff[1]
+})
+</pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Похоже, что я уже на пол пути к финалу. Расскажи еще.
+    </div>
+    <div class="answer">
+        Вот этим условием можно проверить, что сосед находится внутри грида
+<pre class="brush: javascript">
+if (0 <= n_row && n_row < grid.length &&
+    0 <= n_col && n_col < grid[n_row].length) {
+    // we can use grid[0] for columns in this mission
+}
+    //...
+</pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я застрял, мне нужен еще толчек
+    </div>
+    <div class="answer">
+        Если ячейка действительно существет, то осталось только проверить, что она существует
+<pre class="brush: javascript">
+if (0 <= n_row && n_row < grid.length &&
+    0 <= n_col && n_col < grid[n_row].length) {
+    
+    if (grid[n_row][n_col]) {
+        count += 1
+    }
+}
+</pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я сделал все, как написано, но все равно не работает.
+    </div>
+    <div class="answer">
+        Используй весь описанный выше код в функции  countNeighbours и верни как результат этой функции объявленный
+        в самом начале счетчик count
+    </div>
+</div>
+
+
+</body>
