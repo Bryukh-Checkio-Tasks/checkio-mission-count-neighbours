@@ -93,6 +93,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210', 'snap.svg_030'],
                 svg.prepare(checkioInput[0], checkioInput[1], checkioInput[2]);
             }
         });
+        io.start();
 
     }
 );
