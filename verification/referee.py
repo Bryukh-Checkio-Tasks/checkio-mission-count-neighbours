@@ -42,6 +42,10 @@ api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
+        function_name={
+            "python": "count_neighbours",
+            "js": "countNeighbours"
+        },
         cover_code={
             'python-27': cover,
             'python-3': cover,
