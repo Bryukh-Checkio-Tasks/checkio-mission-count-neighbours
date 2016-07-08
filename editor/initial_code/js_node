@@ -1,6 +1,6 @@
 "use strict";
 
-function countNeighbours(data) {
+function countNeighbours(data, row, col) {
     return 0;
 }
 
