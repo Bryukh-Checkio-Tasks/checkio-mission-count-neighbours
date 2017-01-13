@@ -18,13 +18,12 @@
 </div>
 
 <p>
-    In cellular automata, <a href="http://en.wikipedia.org/wiki/Moore_neighborhood">the
-    Moore neighborhood</a> comprises
-    the eight cells surrounding a central cell on a two-dimensional square lattice.
+    In cellular automata, <a href="http://en.wikipedia.org/wiki/Moore_neighborhood" target="_blank">the
+    Moore neighborhood</a> comprises the eight cells surrounding a central cell on a two-dimensional square lattice.
     The neighborhood is named after Edward F. Moore, a pioneer of cellular automata theory.
-    Many board games are played with a rectangular grid with squares as cells.
-    For some games, it is important to know about the conditions of neighbouring cells for chip
-    (figure, draught etc) placement and strategy.
+    Many board games are played on a rectangular grid with squares as cells.
+    For some games, it is important to know the conditions of neighbouring cells for chip
+    (figure, draught, checker, etc) placement and strategy.
 </p>
 
 <p>
@@ -41,7 +40,7 @@
 </p>
 
 <p>
-    For the given examples (see the schema) there is the same grid:
+    The two examples shown use the same grid:
 </p>
 {% if interpreter.slug == "js-node" %}
 <pre>
@@ -62,19 +61,22 @@
 {% endif %}
 <br>
 <p>
-    For the first example coordinates of the cell is (1,&nbsp;2) and
-    as we can see from the schema this
-    cell has 3 neighbour chips.
-    For the second example coordinates is (0,&nbsp;0) and this cell contains
+    For the first example, coordinates of the cell are (1,&nbsp;2) and
+    as we can see from the schema this cell has 3 neighbour chips.
+    For the second example coordinates are (0,&nbsp;0). This cell contains
     a chip, but we count only neighbours and the answer is 1.
 </p>
 <p>
-    <strong>Input: </strong> Three arguments. A grid as a tuple of tuples with integers (1/0),
-    a row number and column number for a cell as integers.
+    <strong>Input: </strong> Three arguments: 
+    <ol>
+        <li>A grid as a <a href="http://openbookproject.net/thinkcs/python/english3e/tuples.html" target="_blank">tuple</a> of tuples containing integers 1 or 0)</li>
+        <li>A row number for a cell, as an integer</li>
+        <li>A column number for a cell, as an integer</li>
+    </ol>
 </p>
 
 <p>
-    <strong>Output: </strong> How many neighbouring cells have chips as an integer.
+    <strong>Output: </strong> The number of neighbouring cells that have chips, as an integer.
 </p>
 
 
