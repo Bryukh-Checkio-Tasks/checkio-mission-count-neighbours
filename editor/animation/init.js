@@ -76,6 +76,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210', 'snap.svg_030'],
 
 
         var io = new extIO({
+            multipleArguments: true,
             functions: {
                 js: 'countNeighbours',
                 python: 'count_neighbours'
